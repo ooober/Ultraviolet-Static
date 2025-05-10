@@ -1,8 +1,8 @@
 @@ -24,187 +24,104 @@ body {
   overflow-x: hidden;
 }
-
-
+ 
+ 
 body::before {
   content: "";
 
