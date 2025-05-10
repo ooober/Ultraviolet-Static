@@ -11,7 +11,7 @@ const passwordInput = document.getElementById("password-input");
 const submitPassword = document.getElementById("submit-password");
 const passwordError = document.getElementById("password-error");
 
-// Check localStorage on load
+//  localStorage 
 const storedHash = localStorage.getItem("passwordHash");
 if (validPasswords.includes(storedHash)) {
   passwordScreen.style.display = "none";
