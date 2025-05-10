@@ -10,5 +10,8 @@
   "devDependencies": {
     "eslint": "^8.23.0",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
   }
 }

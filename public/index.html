@@ -8,6 +8,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" />
     <link rel="shortcut icon" content="favicon.ico" />
     <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="baremux/index.js" defer></script>
     <script src="epoxy/index.js" defer></script>
     <script src="uv/uv.bundle.js" defer></script>
@@ -18,7 +19,16 @@
   </head>
 
   <body>
-    <div class="container">
+    <div id="password-screen" class="password-screen">
+      <div class="password-container">
+        <h2>Enter Password</h2>
+        <input type="password" id="password-input" placeholder="Password" />
+        <button id="submit-password">Submit</button>
+        <p id="password-error" class="password-error"></p>
+      </div>
+    </div>
+
+    <div id="main-content" class="container" style="display: none;">
       <div class="header">
         <h1>Esa's unblocked | Web proxy</h1>
         <p class="subtitle">Browse freely with our brand new web proxy powered by Ultraviolet.</p>

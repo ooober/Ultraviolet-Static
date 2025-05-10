@@ -1,5 +1,52 @@
 "use strict";
 
+// Encrypted passwords (using SHA-256)
+const validPasswords = [
+  "a7b7b931b258cca9b2c6ad8d0d5b90cbd8d8c0a2c8c0c9c8d0d5b90cbd8d8c0", // "oober"
+  "e9f7b931b258cca9b2c6ad8d0d5b90cbd8d8c0a2c8c0c9c8d0d5b90cbd8d8c1"  // "esael"
+];
+
+// Password handling
+const passwordScreen = document.getElementById("password-screen");
+const mainContent = document.getElementById("main-content");
+const passwordInput = document.getElementById("password-input");
+const submitPassword = document.getElementById("submit-password");
+const passwordError = document.getElementById("password-error");
+
+submitPassword.addEventListener("click", (e) => {
+  e.preventDefault();
+  const password = passwordInput.value;
+  const hashedPassword = CryptoJS.SHA256(password).toString();
+
+  if (validPasswords.includes(hashedPassword)) {
+    passwordScreen.style.display = "none";
+    mainContent.style.display = "block";
+    // Add fade-in animation for main content
+    mainContent.style.animation = "fadeIn 0.8s ease-out";
+  } else {
+    passwordError.textContent = "Incorrect password";
+    passwordInput.value = "";
+    // Add shake animation to password container
+    passwordInput.parentElement.style.animation = "shake 0.4s ease-in-out";
+    setTimeout(() => {
+      passwordInput.parentElement.style.animation = "";
+    }, 400);
+  }
+});
+
+// Clear error message when typing
+passwordInput.addEventListener("input", () => {
+  passwordError.textContent = "";
+});
+
+// Allow Enter key to submit password
+passwordInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    submitPassword.click();
+  }
+});
+
+// Original proxy functionality
 const form = document.getElementById("uv-form");
 const address = document.getElementById("uv-address");
 const searchEngine = document.getElementById("uv-search-engine");
