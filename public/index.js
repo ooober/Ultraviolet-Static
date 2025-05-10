@@ -2,8 +2,8 @@
 
 // Encrypted passwords (using SHA-256)
 const validPasswords = [
-  "a7b7b931b258cca9b2c6ad8d0d5b90cbd8d8c0a2c8c0c9c8d0d5b90cbd8d8c0", // "oober"
-  "e9f7b931b258cca9b2c6ad8d0d5b90cbd8d8c0a2c8c0c9c8d0d5b90cbd8d8c1"  // "esael"
+  "a3fd0c59a5e275cd8d5cc5a3a1a56317c7816e55ac1e2e762b3b8b3fca063f4d", // oober
+  "f10a168f0c49a22458cb437e2ea94e446e8131c6ea225660b7d92406e04c9514"  // esael
 ];
 
 // Password handling
